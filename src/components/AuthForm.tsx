@@ -15,10 +15,12 @@ import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
+import { createAccount } from "@/lib/action/user.action";
 
 const AuthForm = ({ type }: { type: "sign-in" | "sign-up" }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [accountId, setAccountId] = useState(null);
   const formSchema = z.object({
     fullName:
       type === "sign-up"
@@ -57,10 +59,21 @@ const AuthForm = ({ type }: { type: "sign-in" | "sign-up" }) => {
   });
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsLoading(true);
+    setErrorMessage("");
+    try {
+      const user = await createAccount({
+        fullName: values.fullName || "",
+        email: values.email,
+      });
+      setAccountId(user.accountId);
+      console.log(values);
+    } catch {
+      setErrorMessage("Something went wrong");
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
