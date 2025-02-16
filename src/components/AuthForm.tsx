@@ -16,11 +16,12 @@ import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
 import { createAccount } from "@/lib/action/user.action";
+import OTPModel from "@/components/OTPModel";
 
 const AuthForm = ({ type }: { type: "sign-in" | "sign-up" }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [accountId, setAccountId] = useState(null);
+  const [accountId, setAccountId] = useState("");
   const formSchema = z.object({
     fullName:
       type === "sign-up"
@@ -159,6 +160,10 @@ const AuthForm = ({ type }: { type: "sign-in" | "sign-up" }) => {
           </div>
         </form>
       </Form>
+      {/* OTP Verification*/}
+      {true && (
+        <OTPModel accountId={accountId} email={form.getValues("email")} />
+      )}
     </>
   );
 };
