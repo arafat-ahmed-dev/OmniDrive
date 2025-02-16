@@ -5,20 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09ba6d16-dc29-490f-9a71-8812b0f0a5a7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/(root)/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MobileNavigation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Sidebar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/use-toast.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/action/file.action.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/index.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(root)/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AuthForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OTPModel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OTPModel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/action/user.action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/action/user.action.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/appwrite/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/appwrite/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FileUploader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FileUploader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Thumbnail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Thumbnail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +87,7 @@
       <workItem from="1739632337734" duration="4756000" />
       <workItem from="1739637147311" duration="2066000" />
       <workItem from="1739682407118" duration="8728000" />
-      <workItem from="1739698726796" duration="5228000" />
+      <workItem from="1739698726796" duration="6190000" />
     </task>
     <servers />
   </component>
