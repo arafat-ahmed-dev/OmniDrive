@@ -30,13 +30,16 @@ const OTPModel = ({
   const [isOpen, setIsOpen] = useState(true);
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
+
   const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setIsLoading(true);
     try {
       const sessionId = await verifySecret({ accountId, password });
       if (sessionId) router.push("/");
-    } catch (error) {
+    } catch (error: any) {
+      setError(error); // Store the entire error object
       console.log("Failed to verify OTP", error);
     }
     setIsLoading(false);
@@ -94,6 +97,7 @@ const OTPModel = ({
               )}
             </AlertDialogAction>
             <div className="subtitle-2 mt-2 text-center text-light-100">
+              {error && <p className="error-message">{error.message}</p>}
               Didn&apos;t receive OTP?{" "}
               <Button
                 type="button"

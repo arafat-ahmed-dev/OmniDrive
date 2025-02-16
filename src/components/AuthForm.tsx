@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
-import { createAccount } from "@/lib/action/user.action";
+import { createAccount, signInUser } from "@/lib/action/user.action";
 import OTPModel from "@/components/OTPModel";
 
 const AuthForm = ({ type }: { type: "sign-in" | "sign-up" }) => {
@@ -64,13 +64,18 @@ const AuthForm = ({ type }: { type: "sign-in" | "sign-up" }) => {
     setIsLoading(true);
     setErrorMessage("");
     try {
-      const user = await createAccount({
-        fullName: values.fullName || "",
-        email: values.email,
-      });
+      const user =
+        type === "sign-up"
+          ? await createAccount({
+              fullName: values.fullName || "",
+              email: values.email,
+            })
+          : await signInUser({ email: values.email });
+      console.log(user);
       setAccountId(user.accountId);
+      setErrorMessage(user.error || "");
     } catch {
-      setErrorMessage("Something went wrong");
+      setErrorMessage("Failed to create account. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -142,7 +147,7 @@ const AuthForm = ({ type }: { type: "sign-in" | "sign-up" }) => {
               />
             )}
           </Button>
-          {errorMessage && <p className="error-message">*{errorMessage}</p>}
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
           <div className="body-2 flex justify-center">
             <p className="text-light-100">
               {type === "sign-in"

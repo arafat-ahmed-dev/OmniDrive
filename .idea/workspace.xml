@@ -5,9 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09ba6d16-dc29-490f-9a71-8812b0f0a5a7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/(root)/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MobileNavigation.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Sidebar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/constants/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(root)/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AuthForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/OTPModel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OTPModel.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/action/user.action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/action/user.action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/appwrite/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/appwrite/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +52,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\arafa\\Documents\\Arafat\\omnidrive\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\arafa\\Documents\\Arafat\\omnidrive\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -54,6 +65,12 @@
         <entry key="com.intellij.reactbuddy.storybook" value="false" />
       </map>
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\arafa\Documents\Arafat\omnidrive\src\app\(root)" />
+      <recent name="C:\Users\arafa\Documents\Arafat\omnidrive\src\app\(auth)" />
+    </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -74,7 +91,8 @@
       <workItem from="1739630805495" duration="1504000" />
       <workItem from="1739632337734" duration="4756000" />
       <workItem from="1739637147311" duration="2066000" />
-      <workItem from="1739682407118" duration="6588000" />
+      <workItem from="1739682407118" duration="8728000" />
+      <workItem from="1739698726796" duration="5228000" />
     </task>
     <servers />
   </component>
