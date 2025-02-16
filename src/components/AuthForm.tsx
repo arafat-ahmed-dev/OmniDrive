@@ -69,7 +69,6 @@ const AuthForm = ({ type }: { type: "sign-in" | "sign-up" }) => {
         email: values.email,
       });
       setAccountId(user.accountId);
-      console.log(values);
     } catch {
       setErrorMessage("Something went wrong");
     } finally {
@@ -161,7 +160,7 @@ const AuthForm = ({ type }: { type: "sign-in" | "sign-up" }) => {
         </form>
       </Form>
       {/* OTP Verification*/}
-      {true && (
+      {accountId && (
         <OTPModel accountId={accountId} email={form.getValues("email")} />
       )}
     </>

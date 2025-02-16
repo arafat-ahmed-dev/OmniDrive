@@ -1,23 +1,23 @@
+"use client";
 import {
   AlertDialog,
   AlertDialogAction,
-  AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-  AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import {
   InputOTP,
   InputOTPGroup,
-  InputOTPSeparator,
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { sendEmailOTP, verifySecret } from "@/lib/action/user.action";
+import { useRouter } from "next/navigation";
 
 const OTPModel = ({
   accountId,
@@ -26,6 +26,7 @@ const OTPModel = ({
   accountId: string;
   email: string;
 }) => {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(true);
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -33,12 +34,16 @@ const OTPModel = ({
     e.preventDefault();
     setIsLoading(true);
     try {
+      const sessionId = await verifySecret({ accountId, password });
+      if (sessionId) router.push("/");
     } catch (error) {
       console.log("Failed to verify OTP", error);
     }
     setIsLoading(false);
   };
-  const handleResendOTP = async () => {};
+  const handleResendOTP = async () => {
+    await sendEmailOTP(email);
+  };
   return (
     <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
       <AlertDialogContent className="shad-alert-dialog">

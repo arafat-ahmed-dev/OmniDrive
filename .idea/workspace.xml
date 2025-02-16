@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09ba6d16-dc29-490f-9a71-8812b0f0a5a7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/OTPModel.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AuthForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OTPModel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OTPModel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/action/user.action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/action/user.action.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +74,7 @@
       <workItem from="1739630805495" duration="1504000" />
       <workItem from="1739632337734" duration="4756000" />
       <workItem from="1739637147311" duration="2066000" />
-      <workItem from="1739682407118" duration="5876000" />
+      <workItem from="1739682407118" duration="6588000" />
     </task>
     <servers />
   </component>
