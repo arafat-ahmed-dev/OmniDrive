@@ -28,7 +28,17 @@ export const calculatePercentage = (sizeInBytes: number) => {
   const percentage = (sizeInBytes / totalSizeInBytes) * 100;
   return Number(percentage.toFixed(2));
 };
-
+export function formatBytes(bytes: number) {
+  if (bytes < 1024) {
+    return bytes + " B";
+  } else if (bytes < 1024 * 1024) {
+    return (bytes / 1024).toFixed(2) + " KB";
+  } else if (bytes < 1024 * 1024 * 1024) {
+    return (bytes / (1024 * 1024)).toFixed(2) + " MB";
+  } else {
+    return (bytes / (1024 * 1024 * 1024)).toFixed(2) + " GB";
+  }
+}
 export const getFileType = (fileName: string) => {
   const extension = fileName.split(".").pop()?.toLowerCase();
 
@@ -229,6 +239,6 @@ export const getFileTypesParams = (type: string) => {
     case "others":
       return ["other"];
     default:
-      return ["document"];
+      return null; // Return null if the type is invalid
   }
 };

@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# OmniDrive - Modern File Management System
 
-## Getting Started
+[![Next.js](https://img.shields.io/badge/Next.js-13.0+-black?logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0+-06B6D4?logo=tailwind-css)](https://tailwindcss.com/)
+[![Appwrite](https://img.shields.io/badge/Appwrite-1.0+-F02E65?logo=appwrite)](https://appwrite.io/)
 
-First, run the development server:
+OmniDrive is a modern, cloud-based file management system built with Next.js, TypeScript, and Tailwind CSS, powered by Appwrite backend services.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Features
+
+- **Secure User Authentication**: Robust authentication system with email/password and OTP verification
+- **File Management**: Upload, organize, and manage files with ease
+- **Responsive Dashboard**: Beautiful and intuitive user interface
+- **Comprehensive UI Library**: Reusable components built with Radix UI and Shadcn
+- **Type-Safe Development**: Full TypeScript support for better code quality
+- **Modern Styling**: Tailwind CSS for rapid UI development
+- **File Preview**: Support for various file types including images, videos, and documents
+- **Search & Filter**: Quickly find files with advanced search and filtering options
+
+## Installation
+
+1. **Prerequisites**
+   - Node.js (v18 or higher)
+   - npm (v9 or higher)
+   - Appwrite project setup
+
+2. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/omnidrive.git
+   cd omnidrive
+   ```
+
+3. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+4. **Environment Variables**
+   Create a `.env.local` file in the root directory with the following variables:
+   ```env
+   NEXT_PUBLIC_APPWRITE_ENDPOINT=your_appwrite_endpoint
+   NEXT_PUBLIC_APPWRITE_PROJECT_ID=your_project_id
+   ```
+
+5. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+## Project Structure
+
+```
+omnidrive/
+├── public/              # Static assets
+├── src/
+│   ├── app/              # Next.js app router
+│   ├── components/       # UI components
+│   ├── constants/        # Application constants
+│   ├── hooks/            # Custom React hooks
+│   ├── lib/              # Appwrite integration and utilities
+│   ├── types/            # TypeScript type definitions
+├── .eslintrc.js         # ESLint configuration
+├── next.config.js       # Next.js configuration
+├── tailwind.config.js   # Tailwind CSS configuration
+├── tsconfig.json        # TypeScript configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Development
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Build for Production
+```bash
+npm run build
+```
 
-## Learn More
+### Start Production Server
+```bash
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Linting
+```bash
+npm run lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+We welcome contributions! Please follow these guidelines:
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/YourFeatureName`)
+3. Commit your changes (`git commit -m 'Add some feature'`)
+4. Push to the branch (`git push origin feature/YourFeatureName`)
+5. Open a pull request
 
-## Deploy on Vercel
+Please ensure your code follows our coding standards and includes appropriate tests.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

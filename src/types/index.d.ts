@@ -21,6 +21,7 @@ declare interface GetFilesProps {
   searchText?: string;
   sort?: string;
   limit?: number;
+  offset?: number;
 }
 declare interface RenameFileProps {
   fileId: string;
@@ -28,6 +29,18 @@ declare interface RenameFileProps {
   extension: string;
   path: string;
 }
+declare interface PaginationState {
+  currentPage: number;
+}
+declare interface PaginationProps {
+  totalCount: number;
+  itemsPerPage?: number;
+}
+
+interface PaginationState {
+  currentPage: number;
+}
+
 declare interface UpdateFileUsersProps {
   fileId: string;
   emails: string[];

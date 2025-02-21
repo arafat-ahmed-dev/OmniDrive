@@ -318,6 +318,9 @@
   .auth-form {
     @apply flex max-h-[800px] w-full max-w-[580px] flex-col justify-center space-y-6 transition-all lg:h-full lg:space-y-8 !important;
   }
+  .profile-form {
+    @apply  w-full grid md:grid-cols-2 justify-center gap-3 transition-all items-center lg:space-y-8 !important;
+  }
   .form-title {
     @apply h1 text-center text-light-100 md:text-left !important;
   }
@@ -364,7 +367,11 @@
     @apply primary-btn h-[52px] gap-2 px-10 shadow-drop-1 !important;
   }
   .uploader-preview-list {
-    @apply fixed bottom-10 right-10 z-50 flex size-full h-fit max-w-[480px] flex-col gap-3 rounded-[20px] bg-white p-7 shadow-drop-3 !important;
+    @apply fixed bottom-10 right-10 z-50 max-h-[80%] flex size-full h-fit max-w-[480px] flex-col gap-3 rounded-[20px] bg-white p-7 shadow-drop-3 !important;
+  }
+  .uploader-preview-list::-webkit-scrollbar {
+    width: 0; /* Hide the scrollbar */
+    height: 0; /* Optionally hide the horizontal scrollbar */
   }
   .uploader-preview-item {
     @apply flex items-center justify-between  gap-3 rounded-xl p-3 shadow-drop-3 !important;

@@ -107,7 +107,7 @@ export const verifySecret = async ({
 export const getCurrentUser = async () => {
   try {
     const { databases, account } = await createSessionClient();
-
+    if (!account || !databases) return null;
     const result = await account.get();
 
     const user = await databases.listDocuments(
@@ -149,5 +149,84 @@ export const signInUser = async ({ email }: { email: string }) => {
     return parseStringify({ accountId: null, error: "User not found" });
   } catch (error) {
     handleError(error, "Failed to sign in user");
+  }
+};
+
+export const updateUserDocument = async ({
+  accountId,
+  fullName,
+  avatar,
+  location,
+  city,
+  phoneNumber,
+  sex,
+}: {
+  accountId: string;
+  fullName?: string;
+  avatar?: string;
+  location?: string;
+  city?: string;
+  phoneNumber?: number;
+  sex?: "male" | "female";
+}) => {
+  try {
+    if (!accountId) {
+      throw new Error("accountId is missing"); // Validate input early
+    }
+    const { databases } = await createSessionClient(); // Use session client for authenticated updates
+
+    const user = await databases.listDocuments(
+      appwriteConfig.databaseId,
+      appwriteConfig.usersCollectionId,
+      [Query.equal("accountId", accountId || "")],
+    );
+
+    if (user.total <= 0) {
+      throw new Error("User not found");
+    }
+
+    const userId = user.documents[0].$id;
+
+    // Create data object for update. Only include fields that are being updated.
+    const data: {
+      fullName?: string;
+      avatar?: string;
+      location?: string; // Fixed typo here
+      city?: string;
+      phoneNumber?: number;
+      sex?: "male" | "female";
+    } = {};
+
+    if (fullName !== undefined) {
+      data.fullName = fullName;
+    }
+    if (avatar !== undefined) {
+      data.avatar = avatar;
+    }
+    if (location !== undefined) {
+      data.location = location;
+    }
+    if (city !== undefined) {
+      data.city = city;
+    }
+    if (phoneNumber !== undefined) {
+      data.phoneNumber = parseInt(String(phoneNumber));
+    }
+    if (sex !== undefined) {
+      data.sex = sex;
+    }
+
+    // Update the document
+    const updatedUser = await databases.updateDocument(
+      appwriteConfig.databaseId,
+      appwriteConfig.usersCollectionId,
+      userId,
+      data,
+    );
+
+    return parseStringify(updatedUser);
+  } catch (error) {
+    console.error("Error updating user:", error); // Log the error for debugging
+    throw error; // Re-throw the error to be handled by the caller
   }
 };

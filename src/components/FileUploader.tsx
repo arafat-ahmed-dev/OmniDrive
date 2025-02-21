@@ -1,7 +1,5 @@
 "use client";
-
 import React, { useCallback, useState } from "react";
-
 import { useDropzone } from "react-dropzone";
 import { Button } from "@/components/ui/button";
 import { cn, convertFileToUrl, getFileType } from "@/lib/utils";
@@ -83,12 +81,11 @@ const FileUploader = ({ ownerId, accountId, className }: Props) => {
         <p>Upload</p>
       </Button>
       {files.length > 0 && (
-        <ul className="uploader-preview-list">
+        <ul className="uploader-preview-list overflow-y-auto">
           <h4 className="h4 text-light-100">Uploading</h4>
 
           {files.map((file, index) => {
             const { type, extension } = getFileType(file.name);
-
             return (
               <li
                 key={`${file.name}-${index}`}

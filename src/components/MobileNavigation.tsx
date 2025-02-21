@@ -15,6 +15,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import FileUploader from "@/components/FileUploader";
 import { signOutUser } from "@/lib/action/user.action";
+import { Separator } from "@/components/ui/separator";
 
 interface Props {
   $id: string;
@@ -55,22 +56,23 @@ const MobileNavigation = ({
         </SheetTrigger>
         <SheetContent className="shad-sheet h-screen px-3">
           <SheetTitle>
-            <div className="header-user">
-              <Image
-                src={avatar || avatarPlaceholderUrl}
-                alt="avatar"
-                width={44}
-                height={44}
-                className="header-user-avatar"
-              />
-              <div className="sm:hidden lg:block">
-                <p className="subtitle-2 capitalize">{fullName}</p>
-                <p className="caption">{email}</p>
+            <Link href="/profile">
+              <div className="header-user">
+                <Image
+                  src={avatar || avatarPlaceholderUrl}
+                  alt="avatar"
+                  width={44}
+                  height={44}
+                  className="header-user-avatar"
+                />
+                <div className="sm:hidden lg:block">
+                  <p className="subtitle-2 capitalize">{fullName}</p>
+                  <p className="caption">{email}</p>
+                </div>
               </div>
-            </div>
-            {/*<Separator className="mb-4 bg-light-200/20" />*/}
+            </Link>
+            <Separator className="mb-4 bg-light-200/20" />
           </SheetTitle>
-
           <nav className="mobile-nav">
             <ul className="mobile-nav-list">
               {navItems.map(({ url, name, icon }) => (
@@ -98,7 +100,7 @@ const MobileNavigation = ({
             </ul>
           </nav>
 
-          {/*<Separator className="my-5 bg-light-200/20" />*/}
+          <Separator className="my-5 bg-light-200/20" />
 
           <div className="flex flex-col justify-between gap-5 pb-5">
             <FileUploader ownerId={ownerId} accountId={accountId} />

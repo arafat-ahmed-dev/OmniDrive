@@ -1,19 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AIAssistantCustomInstructionsStorage">
+    <option name="instructions">
+      <map>
+        <entry key="AIAssistant.VCS.GenerateCommitMessage">
+          <value>
+            <AIAssistantStoredInstruction>
+              <option name="actionId" value="AIAssistant.VCS.GenerateCommitMessage" />
+            </AIAssistantStoredInstruction>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09ba6d16-dc29-490f-9a71-8812b0f0a5a7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/hooks/use-toast.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/action/file.action.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(root)/[type]/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(root)/profile/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AccountSetting.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Pagination.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/icons/logo-brand.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/icons/logo-brand.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/icons/logo-full-brand.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/icons/logo-full-brand.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/icons/logo-full.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/icons/logo-full.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/icons/logout.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/icons/logout.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(auth)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(auth)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(root)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(root)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(root)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(root)/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ActionDropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ActionDropdown.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ActionModelContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ActionModelContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AuthForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Chart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chart.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/FileUploader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FileUploader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormattedDateTime.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormattedDateTime.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MobileNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MobileNavigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sort.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sort.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Thumbnail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Thumbnail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/action/file.action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/action/file.action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/action/user.action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/action/user.action.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +61,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -32,26 +74,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;C:\\Users\\arafa\\Documents\\Arafat\\omnidrive\\node_modules\\eslint&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\arafa\\Documents\\Arafat\\omnidrive\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\arafa\\Documents\\Arafat\\omnidrive\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "js.linters.configure.manually.selectedeslint": "true",
+    "last_opened_file_path": "C:/Users/arafa/Documents/Arafat/full-stack-school/next-dashboard-ui",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "C:\\Users\\arafa\\Documents\\Arafat\\omnidrive\\node_modules\\eslint",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\arafa\\Documents\\Arafat\\omnidrive\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.web.browsers",
+    "ts.external.directory.path": "C:\\Users\\arafa\\Documents\\Arafat\\omnidrive\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -64,13 +107,15 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\arafa\Documents\Arafat\omnidrive\src\app\(root)" />
+      <recent name="C:\Users\arafa\Documents\Arafat\omnidrive\src\app" />
+      <recent name="C:\Users\arafa\Documents\Arafat\omnidrive\src" />
       <recent name="C:\Users\arafa\Documents\Arafat\omnidrive\src\app\(auth)" />
     </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-WS-243.23654.157" />
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-WS-243.24978.60" />
       </set>
     </attachedChunks>
   </component>
@@ -87,7 +132,18 @@
       <workItem from="1739632337734" duration="4756000" />
       <workItem from="1739637147311" duration="2066000" />
       <workItem from="1739682407118" duration="8728000" />
-      <workItem from="1739698726796" duration="6190000" />
+      <workItem from="1739698726796" duration="12483000" />
+      <workItem from="1739766810347" duration="18250000" />
+      <workItem from="1739812583376" duration="5739000" />
+      <workItem from="1739873526626" duration="116000" />
+      <workItem from="1739873682769" duration="4699000" />
+      <workItem from="1739891524674" duration="1187000" />
+      <workItem from="1739894756227" duration="2228000" />
+      <workItem from="1739938910793" duration="7740000" />
+      <workItem from="1739951407139" duration="24000" />
+      <workItem from="1740025254925" duration="510000" />
+      <workItem from="1740025775500" duration="6564000" />
+      <workItem from="1740109479126" duration="302000" />
     </task>
     <servers />
   </component>
@@ -104,5 +160,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="config the file upload logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>

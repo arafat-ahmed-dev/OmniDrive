@@ -53,7 +53,7 @@ const SideBar = ({ fullName, avatar, email }: Props) => {
                   width={24}
                   height={24}
                   className={cn(
-                    "nav-icon",
+                    "nav-icon ",
                     pathname === url && "nav-icon-active",
                   )}
                 />
@@ -70,20 +70,21 @@ const SideBar = ({ fullName, avatar, email }: Props) => {
         height={418}
         className="w-full"
       />
-
-      <div className="sidebar-user-info">
-        <Image
-          src={avatar || avatarPlaceholderUrl}
-          alt="Avatar"
-          width={44}
-          height={44}
-          className="sidebar-user-avatar"
-        />
-        <div className="hidden lg:block">
-          <p className="subtitle-2 capitalize">{fullName}</p>
-          <p className="caption">{email}</p>
+      <Link href="/profile">
+        <div className="sidebar-user-info">
+          <Image
+            src={avatar || avatarPlaceholderUrl}
+            alt="Avatar"
+            width={44}
+            height={44}
+            className="sidebar-user-avatar"
+          />
+          <div className="hidden lg:block">
+            <p className="subtitle-2 capitalize">{fullName}</p>
+            <p className="caption">{email}</p>
+          </div>
         </div>
-      </div>
+      </Link>
     </aside>
   );
 };
