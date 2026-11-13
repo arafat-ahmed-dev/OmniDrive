@@ -35,27 +35,53 @@ const FileUploader = ({ ownerId, accountId, className }: Props) => {
             description: (
               <p className="body-2 text-white">
                 <span className="font-semibold">{file.name}</span> is too large.
-                Max file size is 50MB.
+                Max file size is {MAX_FILE_SIZE / 1000 / 1000} MB.
               </p>
             ),
             className: "error-toast",
           });
         }
 
-        return uploadFile({ file, ownerId, accountId, path }).then(
-          (uploadedFile) => {
-            if (uploadedFile) {
-              setFiles((prevFiles) =>
-                prevFiles.filter((f) => f.name !== file.name),
-              );
-            }
-          },
-        );
+        try {
+          const uploadedFile = await uploadFile({
+            file,
+            ownerId,
+            accountId,
+            path,
+          });
+
+          if (uploadedFile) {
+            setFiles((prevFiles) =>
+              prevFiles.filter((f) => f.name !== file.name),
+            );
+          }
+        } catch (error) {
+          setFiles((prevFiles) =>
+            prevFiles.filter((f) => f.name !== file.name),
+          );
+
+          const message =
+            error instanceof Error ? error.message : "The upload failed.";
+          const isSizeLimitError =
+            message.includes("limit_file_size_exceeded") ||
+            message.includes("above the limit allowed");
+
+          toast({
+            description: (
+              <p className="body-2 text-white">
+                {isSizeLimitError
+                  ? `${file.name} exceeds the storage provider's file-size limit.`
+                  : `Failed to upload ${file.name}. Please try again.`}
+              </p>
+            ),
+            className: "error-toast",
+          });
+        }
       });
 
       await Promise.all(uploadPromises);
     },
-    [ownerId, accountId, path],
+    [ownerId, accountId, path, toast],
   );
 
   const { getRootProps, getInputProps } = useDropzone({ onDrop });

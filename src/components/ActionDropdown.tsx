@@ -30,6 +30,7 @@ import {
 } from "@/lib/action/file.action";
 import { usePathname } from "next/navigation";
 import { FileDetails, ShareInput } from "@/components/ActionModelContent";
+import { useToast } from "@/hooks/use-toast";
 
 const ActionDropdown = ({ file }: { file: Models.Document }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -38,6 +39,7 @@ const ActionDropdown = ({ file }: { file: Models.Document }) => {
   const [name, setName] = useState(file.name);
   const [isLoading, setIsLoading] = useState(false);
   const [emails, setEmails] = useState<string[]>([]);
+  const { toast } = useToast();
 
   const path = usePathname();
 
@@ -61,24 +63,46 @@ const ActionDropdown = ({ file }: { file: Models.Document }) => {
         deleteFile({ fileId: file.$id, bucketFileId: file.bucketId, path }),
     };
 
-    success = await actions[action.value as keyof typeof actions]();
+    try {
+      success = await actions[action.value as keyof typeof actions]();
 
-    if (success) closeAllModals();
-
-    setIsLoading(false);
+      if (success) closeAllModals();
+    } catch (error) {
+      toast({
+        description:
+          error instanceof Error ? error.message : "Unable to update sharing.",
+        className: "error-toast",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleRemoveUser = async (email: string) => {
     const updatedEmails = emails.filter((e) => e !== email);
-    console.log(path, updatedEmails);
-    const success = await updateFileUsers({
-      fileId: file.$id,
-      emails: updatedEmails,
-      path,
-    });
+    try {
+      const success = await updateFileUsers({
+        fileId: file.$id,
+        emails: updatedEmails,
+        path,
+      });
 
-    if (success) setEmails(updatedEmails);
-    closeAllModals();
+      if (success) {
+        setEmails(updatedEmails);
+        closeAllModals();
+      }
+    } catch (error) {
+      toast({
+        description:
+          error instanceof Error ? error.message : "Unable to update sharing.",
+        className: "error-toast",
+      });
+    }
+  };
+
+  const handleShareInputChange = (newEmails: string[]) => {
+    const validNewEmails = newEmails.filter((email) => email.includes("@"));
+    setEmails(Array.from(new Set([...file.users, ...validNewEmails])));
   };
 
   const renderDialogContent = () => {
@@ -103,7 +127,7 @@ const ActionDropdown = ({ file }: { file: Models.Document }) => {
           {value === "share" && (
             <ShareInput
               file={file}
-              onInputChange={setEmails}
+              onInputChange={handleShareInputChange}
               onRemove={handleRemoveUser}
             />
           )}
@@ -159,6 +183,10 @@ const ActionDropdown = ({ file }: { file: Models.Document }) => {
               className="shad-dropdown-item"
               onClick={() => {
                 setAction(actionItem);
+
+                if (actionItem.value === "share") {
+                  setEmails(file.users);
+                }
 
                 if (
                   ["rename", "share", "delete", "details"].includes(

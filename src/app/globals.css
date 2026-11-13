@@ -2,13 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nav-liquid {
+  0% {
+    opacity: 0.65;
+    transform: translateX(-8px) scale(0.96);
+  }
+  60% {
+    transform: translateX(2px) scale(1.015);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
 @layer base {
   * {
     @apply scroll-smooth;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-white text-dark-200 min-h-screen;
+    @apply min-h-screen bg-white text-dark-200 antialiased;
+    transition:
+      background-color 200ms ease,
+      color 200ms ease;
+  }
+
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  [role="button"] {
+    transition:
+      color 200ms ease,
+      background-color 200ms ease,
+      border-color 200ms ease,
+      box-shadow 200ms ease,
+      opacity 200ms ease,
+      transform 200ms ease;
   }
 
   .custom-scrollbar::-webkit-scrollbar {
@@ -54,6 +101,27 @@
   .recharts-responsive-container {
     height: initial !important;
   }
+
+  .main-content,
+  .auth-form {
+    animation: page-enter 350ms ease-out both;
+  }
+
+  .route-transition {
+    animation: page-enter 400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
@@ -381,7 +449,10 @@
   }
 
   .error-toast {
-    @apply bg-red !rounded-[10px] !important;
+    @apply !rounded-2xl !border-red/30 !bg-red !text-white !shadow-drop-2 !important;
+  }
+  .success-toast {
+    @apply !rounded-2xl !border-green/30 !bg-green !text-dark-200 !shadow-drop-2 !important;
   }
 
   /* Header */
@@ -412,7 +483,7 @@
     @apply flex flex-1 flex-col gap-4 !important;
   }
   .mobile-nav-item {
-    @apply flex text-light-100 gap-4 w-full justify-start items-center h5 px-6 h-[52px] rounded-full !important;
+    @apply flex text-light-100 gap-4 w-full justify-start items-center h5 px-6 h-[52px] rounded-full transition-all duration-300 !important;
   }
   .mobile-sign-out-button {
     @apply h5 flex h-[52px] w-full items-center gap-4 rounded-full bg-brand/10 px-6 text-brand shadow-none transition-all hover:bg-brand/20 !important;
@@ -448,7 +519,7 @@
     @apply h5 mt-9 flex-1 gap-1 text-brand !important;
   }
   .sidebar-nav-item {
-    @apply flex text-light-100 gap-4 rounded-xl lg:w-full justify-center lg:justify-start items-center h5 lg:px-[30px] h-[52px] lg:rounded-full !important;
+    @apply flex text-light-100 gap-4 rounded-xl lg:w-full justify-center lg:justify-start items-center h5 lg:px-[30px] h-[52px] lg:rounded-full transition-all duration-300 !important;
   }
   .sidebar-user-info {
     @apply mt-4 flex items-center justify-center gap-2 rounded-full bg-brand/10 p-1 text-light-100 lg:justify-start lg:p-3 !important;
@@ -459,6 +530,7 @@
 
   .shad-active {
     @apply bg-brand text-white shadow-drop-2 !important;
+    animation: nav-liquid 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
   /* Sort */

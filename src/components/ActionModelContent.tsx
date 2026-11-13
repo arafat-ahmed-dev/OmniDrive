@@ -40,7 +40,7 @@ export const FileDetails = ({ file }: { file: Models.Document }) => {
 
 interface Props {
   file: Models.Document;
-  onInputChange: React.Dispatch<React.SetStateAction<string[]>>;
+  onInputChange: (emails: string[]) => void;
   onRemove: (email: string) => void;
 }
 
