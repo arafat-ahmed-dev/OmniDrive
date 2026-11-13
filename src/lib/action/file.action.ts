@@ -160,12 +160,35 @@ export const updateFileUsers = async ({
 }: UpdateFileUsersProps) => {
   const { databases } = await createAdminClient();
   try {
+    const uniqueEmails = Array.from(
+      new Set(emails.map((email) => email.trim()).filter(Boolean)),
+    );
+    const users = uniqueEmails.length
+      ? await databases.listDocuments(
+          appwriteConfig.databaseId,
+          appwriteConfig.usersCollectionId,
+          [Query.equal("email", uniqueEmails)],
+        )
+      : { documents: [] };
+    const registeredEmails = new Set(
+      users.documents.map((user) => user.email as string),
+    );
+    const unregisteredEmails = uniqueEmails.filter(
+      (email) => !registeredEmails.has(email),
+    );
+
+    if (unregisteredEmails.length > 0) {
+      throw new Error(
+        `No registered account found for: ${unregisteredEmails.join(", ")}`,
+      );
+    }
+
     const updatedFile = await databases.updateDocument(
       appwriteConfig.databaseId,
       appwriteConfig.filesCollectionId,
       fileId,
       {
-        users: emails,
+        users: uniqueEmails,
       },
     );
     revalidatePath(path);
